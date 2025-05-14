@@ -1,0 +1,171 @@
+/* estilos.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fondo adaptable con animación */
+.background {
+  background-image: url('img.1.avif'); /* Reemplaza con tu imagen */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  animation: moverFondo 30s linear infinite; /* Aquí se agrega la animación de fondo */
+}
+
+/* Animación de movimiento del fondo */
+@keyframes moverFondo {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Menú lateral */
+.menu-lateral {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+/* Logo adaptable alineado a la izquierda */
+.logo {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 30px;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+/* Lista del menú */
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral li {
+  margin: 20px 0;
+}
+
+.menu-lateral a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.menu-lateral a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+/* Contenido adaptable */
+.contenido {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  min-width: 0;
+}
+
+.titulo {
+  font-size: 3em;
+  color: red;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+/* RESPONSIVE */
+
+/* Tablet y móviles */
+@media (max-width: 768px) {
+  .background {
+    flex-direction: column;
+  }
+
+  .menu-lateral {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .menu-lateral ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu-lateral li {
+    margin: 0;
+  }
+
+  .menu-lateral a {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .logo {
+    max-width: 120px;
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+
+  .titulo {
+    font-size: 2em;
+    padding: 15px 25px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .logo {
+    max-width: 90px;
+    margin-right: 10px;
+  }
+
+  .menu-lateral a {
+    font-size: 5px;
+    padding: 6px 8px;
+  }
+
+  .titulo {
+    font-size: 1.5em;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .background {
+    min-height: 100dvh; 
+  }
+}
